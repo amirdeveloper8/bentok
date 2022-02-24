@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CustomButton from "../../UI/Button/CustomButton";
 import CustomInput from "../../UI/Input/CustomInput";
+import CustomSelect from "../../UI/Input/CustomSelect";
 import classes from "./login.module.css";
 
 const Login = () => {
@@ -11,6 +12,10 @@ const Login = () => {
 
   const [emailValue, setEmailValue] = useState("");
   const [postalCodeValue, setPostalCodeValue] = useState("");
+  const [cityValue, setCityValue] = useState("");
+  const [stateValue, setStateValue] = useState("");
+  const [cityError, setCityError] = useState(false);
+  const [stateError, setStateError] = useState(false);
 
   console.log("email", emailValue);
   console.log("postal", postalCodeValue);
@@ -54,24 +59,38 @@ const Login = () => {
             getValues={(val) => setEmailValue(val)}
           />
 
-          <CustomInput
-            type="number"
-            placeholder="آدرس ایمیلت رو اینجا بنویس"
-            label="آدرس ایمیل"
-            id="testText"
-            name="test"
-            format={(value) => value.trim().length === 10}
-            alertText="کدپستی را به درستی وارد کنید!"
-          />
-          <CustomInput
-            type="text"
-            placeholder="آدرس ایمیلت رو اینجا بنویس"
-            label="آدرس ایمیل"
-            id="testText"
-            name="test"
-            format={(value) => value.trim().length > 0}
-            alertText="ایمیل را به درستی وارد کنید!"
-          />
+          <CustomSelect
+            label="اسم شهرت رو انتخاب کن"
+            id="cities"
+            name="Cities"
+            alertText="هیچ شهری انتخاب نشده"
+            getValue={(val) => setCityValue(val)}
+            error={cityError}
+          >
+            <option value="tehran">تهران</option>
+            <option value="isfahan">اصفهان</option>
+            <option value="shiraz">شیراز</option>
+            <option value="ahwaz">اهواز</option>
+            <option value="tehran">تبریز</option>
+            <option value="tehran">رشت</option>
+          </CustomSelect>
+
+          <CustomSelect
+            label="اسم استانت رو انتخاب کن"
+            id="state"
+            name="States"
+            alertText="هیچ استانی انتخاب نشده"
+            getValue={(val) => setStateValue(val)}
+            error={stateError}
+          >
+            <option value="tehran">تهران</option>
+            <option value="isfahan">اصفهان</option>
+            <option value="shiraz">شیراز</option>
+            <option value="ahwaz">اهواز</option>
+            <option value="tehran">تبریز</option>
+            <option value="tehran">رشت</option>
+          </CustomSelect>
+
           <CustomInput
             type="text"
             placeholder="کدپستی خونه رو بنویس"

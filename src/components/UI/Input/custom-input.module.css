@@ -2,9 +2,14 @@
   width: 100%;
   position: relative;
   margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.formGroup input {
+.formGroup input,
+.formGroup select {
   border: 2px solid var(--lightGray);
   width: 100%;
   background-color: var(--white);
@@ -56,6 +61,7 @@
   margin-right: 8%;
   margin-top: 5px;
   font-size: 14px;
+  width: 100%;
 }
 
 .close {
@@ -73,4 +79,28 @@
   transform: rotate(45deg);
   left: 10px;
   top: 4px;
+}
+
+.formGroup select {
+  appearance: none;
+  position: relative;
+  background-image: url(/public/images/ArrowDown.png);
+  background-position: center left 10px;
+  background-repeat: no-repeat;
+}
+
+.lableSlected {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  width: 80%;
+  height: 40px;
+  z-index: 99;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 20px;
+  font-size: 1.2rem;
+  color: var(--lightGray);
 }

@@ -62,7 +62,7 @@ const CustomInput = (props) => {
         placeholder={placeholder}
         onFocus={() => setShowLabel(true)}
       />
-      {inputHasError && <alert className={classes.alert}> {alertText}</alert>}
+      {inputHasError && <span className={classes.alert}> {alertText}</span>}
       {inputValue && (
         <button className={classes.close} onClick={resetHandler}>
           +
