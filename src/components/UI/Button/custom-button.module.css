@@ -76,4 +76,9 @@
   margin: 8px;
   padding: 8px;
   z-index: 99;
+  opacity: 0.9;
+}
+
+.button:hover {
+  opacity: 1;
 }

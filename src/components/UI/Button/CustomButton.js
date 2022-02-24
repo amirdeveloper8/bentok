@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import classes from "./custom-button.module.css";
 
 const CustomButton = (props) => {
@@ -9,14 +8,14 @@ const CustomButton = (props) => {
 
   let firstStepsClasses = `${classes.firstStepsClasses}`;
   let lastStepsClasses = `${classes.lastStepsClasses}`;
-  if (steps === 25) {
+  if (steps === 1) {
     firstStepsClasses = `${classes.firstStepsClasses} ${classes.step1}`;
-  } else if (steps >= 50) {
+  } else if (steps >= 2) {
     firstStepsClasses = `${classes.firstStepsClasses} ${classes.step2}`;
   }
-  if (steps === 70) {
+  if (steps === 3) {
     lastStepsClasses = `${classes.lastStepsClasses} ${classes.step3}`;
-  } else if (steps === 100) {
+  } else if (steps === 4) {
     lastStepsClasses = `${classes.lastStepsClasses} ${classes.stepsDone}`;
   }
 
@@ -26,7 +25,7 @@ const CustomButton = (props) => {
       <div className={firstStepsClasses} />
       <div className={lastStepsClasses} />
       <button className={btnClasses} onClick={onClick}>
-        {steps}
+        {props.children}
       </button>
     </div>
   );

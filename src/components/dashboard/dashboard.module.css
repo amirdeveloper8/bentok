@@ -1,0 +1,32 @@
+.dashboard {
+  position: relative;
+  max-width: 360px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: auto;
+  background: rgb(224, 224, 224);
+  background: linear-gradient(0deg, var(--bgYellow1) 0%, var(--bgYellow2) 100%);
+  direction: rtl;
+  background-size: cover;
+  padding: 1rem;
+}
+
+.logout {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: red;
+  border-radius: 12px;
+  color: white;
+  opacity: 0.7;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 8px;
+  transition: 0.2s ease;
+}
+
+.logout:hover {
+  opacity: 1;
+}

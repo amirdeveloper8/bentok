@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import classes from "./custom-input.module.css";
 
 const CustomSelect = (props) => {
-  const { className, defaultValue, label, id, name, error, alertText } = props;
+  const { className, label, id, name, submitForm, step, alertText } = props;
 
   const [value, setValue] = useState("");
 
@@ -12,16 +12,17 @@ const CustomSelect = (props) => {
 
   useEffect(() => {
     props.getValue(value);
-    console.log(value);
+    if (value) {
+      props.updateSteps(true);
+    } else {
+      props.updateSteps(false);
+    }
   }, [value]);
-
-  console.log(value);
 
   let formGroupClass = classes.formGroup;
   return (
     <div
       className={className ? `${className} ${formGroupClass}` : formGroupClass}
-      //   onBlur={blurHandler}
     >
       {!value && (
         <label htmlFor={id} className={classes.lableSlected}>
@@ -29,16 +30,12 @@ const CustomSelect = (props) => {
         </label>
       )}
 
-      <select
-        name={name}
-        id={id}
-        defaultValue={defaultValue ? defaultValue : ""}
-        value={value}
-        onChange={handleChange}
-      >
+      <select name={name} id={id} value={value} onChange={handleChange}>
         {props.children}
       </select>
-      {error && <span className={classes.alert}>{alertText}</span>}
+      {submitForm && !step && (
+        <span className={classes.alert}>{alertText}</span>
+      )}
     </div>
   );
 };

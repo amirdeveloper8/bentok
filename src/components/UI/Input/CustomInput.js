@@ -1,10 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useInput from "../../../hooks/use-input";
 import classes from "./custom-input.module.css";
 
 const CustomInput = (props) => {
-  const { type, className, placeholder, label, id, name, format, alertText } =
-    props;
+  const {
+    type,
+    className,
+    placeholder,
+    label,
+    id,
+    name,
+    format,
+    alertText,
+    step,
+    submitForm,
+  } = props;
 
   const {
     value: inputValue,
@@ -20,6 +30,7 @@ const CustomInput = (props) => {
   const resetHandler = (e) => {
     e.preventDefault();
     resetInput();
+    props.updateSteps(false);
   };
 
   let formGroupClass = classes.formGroup;
@@ -30,23 +41,27 @@ const CustomInput = (props) => {
     formGroupClass = classes.formGroup;
   }
 
-  const blurHandler = () => {
-    console.log(inputValue, inputIsValid);
+  useEffect(() => {
     if (inputIsValid) {
       props.getValues(inputValue);
+      props.updateSteps(true);
+    } else {
+      props.getValues("");
+      props.updateSteps(false);
     }
-  };
+  }, [inputIsValid, inputValue]);
 
   return (
     <div
       className={className ? `${className} ${formGroupClass}` : formGroupClass}
-      onBlur={blurHandler}
+      // onBlur={blurHandler}
     >
       <label
         htmlFor={id}
-        className={classes.label}
         className={
-          !showLabel ? classes.label : `${classes.label} ${classes.labelShow}`
+          !showLabel
+            ? `${classes.label}`
+            : `${classes.label} ${classes.labelShow}`
         }
       >
         {label}
@@ -62,7 +77,9 @@ const CustomInput = (props) => {
         placeholder={placeholder}
         onFocus={() => setShowLabel(true)}
       />
-      {inputHasError && <span className={classes.alert}> {alertText}</span>}
+      {(inputHasError || (submitForm && !step)) && (
+        <span className={classes.alert}> {alertText}</span>
+      )}
       {inputValue && (
         <button className={classes.close} onClick={resetHandler}>
           +

@@ -15,4 +15,5 @@
   background-color: var(--white);
   direction: rtl;
   min-height: 100vh;
+  padding: 2rem;
 }
