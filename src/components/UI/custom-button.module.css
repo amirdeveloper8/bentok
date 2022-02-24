@@ -1,0 +1,79 @@
+.btnContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.noStepsClasses {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-color: transparent;
+  border: 5px solid var(--stepsGray);
+  z-index: 9;
+}
+
+.firstStepsClasses {
+  position: absolute;
+  border: 5px solid var(--darkGreen);
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  z-index: 10;
+  border-left: none;
+  border-bottom-right-radius: 20px;
+  opacity: 0;
+}
+
+.step1 {
+  height: 50%;
+  border-top: none;
+  opacity: 1;
+}
+
+.step2 {
+  height: 100%;
+  border-top-right-radius: 20px;
+  opacity: 1;
+}
+
+.lastStepsClasses {
+  position: absolute;
+  border: 5px solid var(--darkGreen);
+  top: 0;
+  left: 0;
+  width: 50%;
+  z-index: 10;
+  opacity: 0;
+  border-top-left-radius: 20px;
+  border-right: none;
+}
+
+.step3 {
+  height: 50%;
+  opacity: 1;
+  border-bottom: 0;
+}
+
+.stepsDone {
+  height: 100%;
+  opacity: 1;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.button {
+  background-color: var(--lightGreen);
+  border: none;
+  border-radius: 12px;
+  width: 100%;
+  margin: 8px;
+  padding: 8px;
+  z-index: 99;
+}

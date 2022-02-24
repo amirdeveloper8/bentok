@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import CustomButton from "./components/UI/CustomButton";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>bentok</h1>
+      <div className="main">
+        <CustomButton steps={0} />
+        <CustomButton steps={25} />
+        <CustomButton steps={50} />
+        <CustomButton steps={70} />
+        <CustomButton steps={100} />
+      </div>
     </div>
   );
 }
