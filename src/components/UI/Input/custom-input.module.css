@@ -1,0 +1,75 @@
+.formGroup {
+  width: 100%;
+  position: relative;
+}
+
+.formGroup input {
+  border: 2px solid var(--lightGray);
+  width: 100%;
+  background-color: var(--white);
+  color: var(--darkGray);
+  padding: 12px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  outline: none;
+}
+
+.formGroup input::placeholder {
+  color: var(--lightGray);
+}
+
+.label {
+  color: var(--darkGray);
+  position: absolute;
+  top: 20px;
+  background-color: transparent;
+  right: 20px;
+  opacity: 0;
+  font-size: 12px;
+  padding: 0 8px;
+  transition: 0.3s ease-in-out;
+  font-weight: 700;
+}
+
+.labelShow {
+  top: -10px;
+  background-color: var(--white);
+  right: 30px;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+}
+
+.labelShow {
+  display: block;
+}
+
+.error input,
+.error label {
+  color: var(--error);
+  border-color: var(--error);
+}
+
+.alert {
+  color: var(--error);
+  font-weight: 700;
+  margin-right: 8%;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.close {
+  background-color: transparent;
+  position: absolute;
+  color: var(--error);
+  border: none;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  font-size: 30px;
+  margin: 0;
+  transform: rotate(45deg);
+  left: 10px;
+  top: 4px;
+}

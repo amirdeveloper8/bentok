@@ -20,4 +20,5 @@
   margin: auto;
   background-color: var(--bgYellow1);
   padding: 15px;
+  direction: rtl;
 }

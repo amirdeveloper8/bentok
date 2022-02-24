@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import CustomButton from "./components/UI/CustomButton";
+import CustomButton from "./components/UI/Button/CustomButton";
+import CustomInput from "./components/UI/Input/CustomInput";
 
 function App() {
   return (
@@ -12,6 +13,15 @@ function App() {
         <CustomButton steps={50} />
         <CustomButton steps={70} />
         <CustomButton steps={100} />
+        <CustomInput
+          type="text"
+          placeholder="آدرس ایمیلت رو اینجا بنویس"
+          label="آدرس ایمیل"
+          id="testText"
+          name="test"
+          format={(value) => value.trim().length > 0}
+          alertText="ایمیل را به درستی وارد کنید!"
+        />
       </div>
     </div>
   );
