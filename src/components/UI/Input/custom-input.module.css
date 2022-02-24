@@ -1,6 +1,7 @@
 .formGroup {
   width: 100%;
   position: relative;
+  margin-bottom: 1rem;
 }
 
 .formGroup input {
@@ -45,7 +46,7 @@
 
 .error input,
 .error label {
-  color: var(--error);
+  color: var(--error) !important;
   border-color: var(--error);
 }
 

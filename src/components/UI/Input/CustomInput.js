@@ -11,7 +11,7 @@ const CustomInput = (props) => {
     isValid: inputIsValid,
     hasError: inputHasError,
     valueChangeHandler: inputChangeHandler,
-    inputBlurHandler: inputBlurHandler,
+    inputBlurHandler: elBlurHandler,
     reset: resetInput,
   } = useInput(format);
 
@@ -30,10 +30,17 @@ const CustomInput = (props) => {
     formGroupClass = classes.formGroup;
   }
 
+  const blurHandler = () => {
+    console.log(inputValue, inputIsValid);
+    if (inputIsValid) {
+      props.getValues(inputValue);
+    }
+  };
+
   return (
     <div
       className={className ? `${className} ${formGroupClass}` : formGroupClass}
-      onBlur={() => setShowLabel(false)}
+      onBlur={blurHandler}
     >
       <label
         htmlFor={id}
@@ -51,7 +58,7 @@ const CustomInput = (props) => {
         type={type}
         value={inputValue}
         onChange={inputChangeHandler}
-        onBlur={inputBlurHandler}
+        onBlur={elBlurHandler}
         placeholder={placeholder}
         onFocus={() => setShowLabel(true)}
       />

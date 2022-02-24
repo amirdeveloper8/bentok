@@ -1,0 +1,66 @@
+.login {
+  position: relative;
+  max-width: 360px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  background: rgb(224, 224, 224);
+  background: linear-gradient(0deg, var(--bgYellow1) 0%, var(--bgYellow2) 100%);
+  direction: rtl;
+  background-size: cover;
+}
+
+.content {
+  background-image: url(/public/images/whiteBack.png);
+  background-size: cover;
+  padding: 15px;
+  margin-top: 130px;
+}
+
+.worm {
+  margin-top: -90px;
+  margin-bottom: 25px;
+  z-index: 99;
+}
+
+.worm img {
+  z-index: 99;
+}
+
+.logo {
+  width: 50px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 99;
+}
+.circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.rectangle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.content h1 {
+  font-size: 1.5rem;
+  color: var(--darkGray);
+  margin-bottom: 10px;
+}
+
+.content h2 {
+  font-size: 1.1rem;
+  color: var(--darkGray);
+  margin-bottom: 10px;
+  line-height: 1.8rem;
+}
+
+.login form {
+  margin-top: 1rem;
+}

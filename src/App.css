@@ -12,13 +12,7 @@
 }
 
 .main {
-  max-width: 360px;
-  display: flex;
-  justify-content: center;
-  align-items: space-between;
-  flex-direction: column;
-  margin: auto;
-  background-color: var(--bgYellow1);
-  padding: 15px;
+  background-color: var(--white);
   direction: rtl;
+  min-height: 100vh;
 }
