@@ -1,70 +1,17 @@
-# ش
+# شروع تسک بنتوک
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## ساخت المان‌های کاستوم 
 
-In the project directory, you can run:
+در پوشه components/UI دو فایل برای ساخت button کاستوم و المان‌های فرم کاستوم ایجاد شده است که هر کدام ازین المان‌ها میتوانند در کامپوننت‌های دلخواه تعریف شده واستفاده شوند.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### در button ایجاد شده مقادیر steps برای مراحل پروژه تعریف شده است که در صورت استفاده از آن مراحل پروژه به کاربر نمایش داده میشود.  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### ساخت hook با نام useInput برای استفاده از inputها تعریف شده است که با استفاده از آن میتوان value المان input استفاده شده را برای موارد 1.گرفتن مقدار، 2. بررسی validation المان، 3.بررسی خطاهای ایجاد شده با استفاده از تعریف یک function برای بررسی value المان، 4. تعریف onChange event المان، 5.تعریف onBlur event المان و 6.ریست کردن مقدار المان
 
-### `npm test`
+## ساخت صفحه login و استفاده از المان‌های کاستوم ساخته شده
+در این صفحه با استفاده از المان‌ها مقادیر را دریافت کرده و پس از تکمیل تمام inputها و ارسال آنها کاربر میتواند به صفحه داشبورد وارد شود.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## استفاده از redux/toolkit به عنوان state management
+در این بخش با استفاده از stateها و actionهای ایجاد شده برای فرستادن اطلاعات و وارد شدن به داشبورد از صفحه login و ست کردن token و همچنین گرفتن اطلاعات و logout کردن در صفحه داشبورد استفاده شده است. 
